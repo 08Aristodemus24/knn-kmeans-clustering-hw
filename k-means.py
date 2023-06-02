@@ -162,8 +162,8 @@ def load_data():
     return X
 
 if __name__ == "__main__":
-    # data_1 = load_data()
-    data_2 = pd.DataFrame({'age': [35, 45, 22, 55, 30, 40, 50, 27, 48, 33], 'monthly_mileage': [500, 800, 300, 200, 400, 700, 250, 350, 600, 450]})
+    # data = load_data()
+    data = pd.DataFrame({'age': [35, 45, 22, 55, 30, 40, 50, 27, 48, 33], 'monthly_mileage': [500, 800, 300, 200, 400, 700, 250, 350, 600, 450]})
 
-    model = KMeans(data_2, 3)
+    model = KMeans(data, 3)
     model.train()
