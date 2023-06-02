@@ -157,12 +157,12 @@ class KMeans:
         plt.show()
 
 
-def load_data():
+def load_ext_data():
     X = np.load("data/ex7_X.npy")
     return X
 
 if __name__ == "__main__":
-    # data = load_data()
+    # data = load_ext_data()
     data = pd.DataFrame({'age': [35, 45, 22, 55, 30, 40, 50, 27, 48, 33], 'monthly_mileage': [500, 800, 300, 200, 400, 700, 250, 350, 600, 450]}).to_numpy()
 
     model = KMeans(data, 3)
