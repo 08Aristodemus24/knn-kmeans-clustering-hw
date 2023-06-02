@@ -127,7 +127,7 @@ class KMeans:
             
     def plot_evolution(self, X, centroids):
         """
-        centroids - is a list of 2D numpy arrays
+        centroids - a 3D tensor of shape (epochs, K, n)
         """
         K = self.K
 
@@ -138,6 +138,7 @@ class KMeans:
         axis.set_ylabel('monthly_mileage')
 
         for k in range(K):
+            # gets all the centroids of cluster K at each epoch
             cs_of_k = centroids[:, k, :]
         
             print(f'centroids of cluster {k}: {cs_of_k}\n')
