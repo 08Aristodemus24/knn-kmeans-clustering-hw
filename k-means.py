@@ -24,7 +24,7 @@ class KMeans:
 
         elif self.initializer == "permutation":
             # Randomly reorder the indices of examples
-            rand_idxs = np.random.permutation(X.shape[0])[:K]
+            rand_idxs = np.random.permutation(num_instances)[:K]
 
 
         # get the data points with these random indeces
@@ -163,7 +163,7 @@ def load_data():
 
 if __name__ == "__main__":
     # data = load_data()
-    data = pd.DataFrame({'age': [35, 45, 22, 55, 30, 40, 50, 27, 48, 33], 'monthly_mileage': [500, 800, 300, 200, 400, 700, 250, 350, 600, 450]})
+    data = pd.DataFrame({'age': [35, 45, 22, 55, 30, 40, 50, 27, 48, 33], 'monthly_mileage': [500, 800, 300, 200, 400, 700, 250, 350, 600, 450]}).to_numpy()
 
     model = KMeans(data, 3)
     model.train()
