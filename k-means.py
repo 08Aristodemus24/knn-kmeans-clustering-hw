@@ -28,7 +28,12 @@ class KMeans:
 
 
         # get the data points with these random indeces
-        init_centroids = X[rand_idxs, :]
+        # init_centroids = X[rand_idxs, :]
+        init_centroids = np.array([
+            [35, 500],
+            [45, 800],
+            [22, 300]
+        ])
         return init_centroids
 
     def _assign_centroids_to_xs(self, X, centroids):
@@ -84,6 +89,7 @@ class KMeans:
         for k in range(K):
             # extract all the points closest/assigned to centroid k
             points_of_ck = X[np.where(xs_centroids == k)]
+            print(f'points of cluster {k}: {points_of_ck}\n')
 
             # calculate the mean of these data points
             new_centroids[k] = np.sum(points_of_ck, axis=0) / len(points_of_ck)
@@ -95,7 +101,7 @@ class KMeans:
         X, K = self.X, self.K
         init_centroids = self.init_centroids(X)
 
-        print(init_centroids)
+        print(f'initial centroids {init_centroids}\n')
         self.visualize(X)
 
         prev_centroids = []
@@ -133,7 +139,7 @@ class KMeans:
 
         fig = plt.figure(figsize=(15, 15))
         axis = fig.add_subplot()
-        axis.scatter(X[:, 0], X[:, 1], c=np.random.randn(self.num_instances), marker='p',alpha=0.75, cmap='magma')
+        axis.scatter(X[:, 0], X[:, 1], color='#000000', marker='p',alpha=0.75,)
         axis.set_xlabel('age')
         axis.set_ylabel('monthly_mileage')
 
@@ -150,7 +156,8 @@ class KMeans:
     def visualize(self, X):
         fig = plt.figure(figsize=(15, 15))
         axis = fig.add_subplot()
-        axis.scatter(X[:, 0], X[:, 1], c=np.random.randn(self.num_instances), marker='p',alpha=0.75, cmap='magma')
+        axis.scatter(X[:, 0], X[:, 1], color='#000000', marker='p',alpha=0.75,)
+        # axis.scatter(X[:, 0], X[:, 1], c=np.random.randn(self.num_instances), marker='p',alpha=0.75, cmap='magma')
         axis.set_xlabel('age')
         axis.set_ylabel('monthly_mileage')
 
