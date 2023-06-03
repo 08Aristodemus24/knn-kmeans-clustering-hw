@@ -28,12 +28,12 @@ class KMeans:
 
 
         # get the data points with these random indeces
-        # init_centroids = X[rand_idxs, :]
-        init_centroids = np.array([
-            [35, 500],
-            [45, 800],
-            [22, 300]
-        ])
+        init_centroids = X[rand_idxs, :]
+        # init_centroids = np.array([
+        #     [35, 500],
+        #     [45, 800],
+        #     [22, 300]
+        # ])
         return init_centroids
 
     def _assign_centroids_to_xs(self, X, centroids):
