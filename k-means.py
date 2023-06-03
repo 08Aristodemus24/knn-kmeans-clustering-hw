@@ -170,8 +170,8 @@ def load_ext_data():
     return X
 
 if __name__ == "__main__":
-    # data = load_ext_data()
-    data = pd.DataFrame({'age': [35, 45, 22, 55, 30, 40, 50, 27, 48, 33], 'monthly_mileage': [500, 800, 300, 200, 400, 700, 250, 350, 600, 450]}).to_numpy()
+    data = load_ext_data()
+    # data = pd.DataFrame({'age': [35, 45, 22, 55, 30, 40, 50, 27, 48, 33], 'monthly_mileage': [500, 800, 300, 200, 400, 700, 250, 350, 600, 450]}).to_numpy()
 
     model = KMeans(data, 3)
     model.train()
