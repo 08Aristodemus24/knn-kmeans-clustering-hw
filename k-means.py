@@ -140,6 +140,7 @@ class KMeans:
         fig = plt.figure(figsize=(15, 15))
         axis = fig.add_subplot()
         axis.scatter(X[:, 0], X[:, 1], color='#000000', marker='p',alpha=0.75,)
+        # axis.scatter(X[:, 0], X[:, 1], c=np.random.randn(self.num_instances), marker='p',alpha=0.75, cmap='magma')
         axis.set_xlabel('age')
         axis.set_ylabel('monthly_mileage')
 
